@@ -12,11 +12,74 @@
 
 #include "push_swap.h"
 
-int checker(int ac, char **av)
+int dup(char **str)
+{
+    int i;
+
+    i = 0;
+    while (str)
+    {
+        while ((str + i))
+        {
+        if (*str == *(str + i))
+                return (0);
+            i++;
+        }
+        i = 0;
+        *str++;
+    }
+    return (1);
+}
+
+int num_check(char **str)
+{
+    char *current_char;
+
+    *current_char = *str;
+    while (*str) 
+    {
+        while (*current_char != '\0')
+         {
+            if (*current_char == '+' || *current_char == '-') 
+            {
+                current_char++;
+            }
+            while (ft_isdigit(*current_char))
+            {
+                current_char++;
+            }
+            if (*current_char != '\0') 
+            {
+                return 1;
+            }
+            current_char++;
+        }
+        str++;
+    }
+    return 0;
+}
+
+int	is_sorted(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (*str)
+	{
+		if (ft_atoi(*str) < ft_atoi(*str + 1))
+			*str++;
+		else
+			return (0);
+	}
+	return (1);
+}
+
+char **checker(int ac, char **av)
 {
     int i = 1;
     char *p = NULL;
     char *tmp = NULL;
+    char **splitted = NULL;     
     if (ac == 1)
         exit(0);
     p = malloc(1);
@@ -27,32 +90,16 @@ int checker(int ac, char **av)
         tmp = p;
         i++;
     }
-    if (!dup(av) || !num_check(av))
+    splitted = ft_split(p, ' ');
+    if (!dup(splitted) || !num_check(splitted))
     {
-        write(2, "Error\n", 6);
+		ft_putendl_fd("error", 1);
         exit(1);
     }
-    return 0;
-}
-
-int dup(char **str)
-{
-    while (str)
+    if (is_sorted(splitted))
     {
-       if (*str == *(str + 1))
-            return (0);
-        *str++;
+		ft_putendl_fd("numbers are sorted", 1);
+        exit(0); 
     }
-    return (1);
+    return (splitted);
 }
-
-int num_check(char **str)
-{
-    while (str)
-    {
-        if (!(*str >= '0' &&  *str <= '9'))
-            return (0);
-        *str++;
-    }
-    return (1);
-} 

@@ -12,6 +12,13 @@
 
 #include"libft.h"
 
+void	check_im(long result)
+{
+	if (result > 2147483647 || result < -2147483648)
+		ft_putendl_fd("error", 1);
+		exit (1);
+}
+
 int	ft_atoi(const char *str)
 {
 	long	nbr;
@@ -34,5 +41,6 @@ int	ft_atoi(const char *str)
 		nbr = nbr * 10 + (str[i] - 48);
 		i++;
 	}
+	check_im( sign * nbr);
 	return (sign * nbr);
 }
