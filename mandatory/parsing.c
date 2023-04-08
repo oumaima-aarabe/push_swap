@@ -6,13 +6,13 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:07:48 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/03/29 22:27:24 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/08 03:27:56 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int dup(char **str)
+int duplicate(char **str)
 {
     int i;
 
@@ -40,7 +40,7 @@ int num_check(char **str)
     {
         while (*current_char != '\0')
          {
-            if (*current_char == '+' || *current_char == '-') 
+            if (*current_char == '+' || *current_char == '-')
             {
                 current_char++;
             }
@@ -91,7 +91,7 @@ char **checker(int ac, char **av)
         i++;
     }
     splitted = ft_split(p, ' ');
-    if (!dup(splitted) || !num_check(splitted))
+    if (!duplicate(splitted) || !num_check(splitted))
     {
 		ft_putendl_fd("error", 1);
         exit(1);

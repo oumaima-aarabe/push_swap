@@ -6,21 +6,21 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:13:58 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/04 00:06:03 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/07 23:28:56 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-struct dlist *dlist_init(void)
+t_dlist *dlist_init(int data)
 {
-    struct dlist *d;
+   t_dlist *d;
 
-    d = (struct dlist *) malloc(sizeof(struct dlist));
-    if(d == NULL)
+    d->head = (t_dlist_item *) malloc(sizeof(t_dlist_item));
+    if(d->head == NULL)
         return NULL;
-    d->head = NULL;
-    d->tail = NULL;
-    d->size = 0;
+    d->head->next = NULL;
+    d->head->prev = NULL;
+    d->head->data = data;
     return (d);
 }

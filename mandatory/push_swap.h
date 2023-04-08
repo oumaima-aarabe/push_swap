@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:08:27 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/03 22:58:24 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/08 03:24:47 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@
 # include <stddef.h>
 #include "../myLib/libft.h"
 
-struct dlist_item
+typedef struct s_dlist_item
 {
     int data;
-    struct dlist_item *next;
-    struct dlist_item *prev;
-};
+    struct s_dlist_item *next;
+    struct s_dlist_item *prev;
+}   t_dlist_item;
 
-struct dlist
+typedef struct s_dlist
 {
     size_t size;
-    struct dlist_item *head;
-    struct dlist_item *tail;
-};
+    t_dlist_item *head;
+} t_dlist;
+
 
 #endif
