@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:08:27 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/08 03:24:47 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/09 00:37:02 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <stdio.h>
+# include <string.h>
 # include <stddef.h>
 #include "../myLib/libft.h"
 
@@ -30,6 +31,22 @@ typedef struct s_dlist
     size_t size;
     t_dlist_item *head;
 } t_dlist;
+char **checker(int ac, char **av);
+t_dlist_item *dlist_init(int data);
 
 
+int dlist_pop_front(t_dlist *stack);
+
+int dlist_push_front(t_dlist *list, t_dlist *list2);
+
+int swap(t_dlist *stack);
+int rotate_ttb(t_dlist *stack);
+
+int rotate_btt(t_dlist *stack);
+
+int duplicate(char **str);
+
+int num_check(char **str);
+
+int	is_sorted(char **str);
 #endif

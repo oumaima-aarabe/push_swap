@@ -6,7 +6,7 @@
 #    By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/29 22:08:18 by ouaarabe          #+#    #+#              #
-#    Updated: 2023/04/08 03:31:46 by ouaarabe         ###   ########.fr        #
+#    Updated: 2023/04/09 00:18:21 by ouaarabe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ OBJ	=	mandatory/instract.o\
 INC		=	mandatory/push_swap.h
 
 CC			=	gcc
-CFLAG		=	-Wall -Wextra -Werror
+CFLAGS		=	 -fsanitize=address
 RM			=	rm -rf
 
 all: $(UTILS) $(NAME)

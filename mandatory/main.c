@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 22:10:59 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/08 03:33:52 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/09 00:37:52 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,17 @@
 int main(int argc, char **argv)
 {
     struct dlist *stack_a;
-    char **args;
+    char **splitted = NULL;
 
-    stack_a = dlist_init();
-    args = (char **)malloc(sizeof(char *) * argc);
-    if (!args)
-        return -1;
-    args = checker(argc, argv);
+    splitted = checker(argc, argv);
+    if (!splitted)
+        return (1);
+
+    while (splitted && *splitted)
+    {
+        printf("[%s]\n", *splitted++);
+    }
+    return (0);
     // stack_a->head->data = args[0];
     // t_dlist *a;
     // a = malloc(sizeof(t_dlist));

@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 22:13:51 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/08 03:26:15 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/09 00:35:51 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int sa(t_dlist *stack)
     if (swap(stack) == -1)
         return (-1);
     ft_putendl_fd ("sa", 1);
+    return (1);
 }
 
 int sb(t_dlist *stack)
@@ -24,6 +25,7 @@ int sb(t_dlist *stack)
     if (swap(stack) == -1)
         return (-1);
     ft_putendl_fd ("sb", 1);
+    return (1);
 }
 
 int ss(t_dlist *stack_a, t_dlist *stack_b)
@@ -33,6 +35,7 @@ int ss(t_dlist *stack_a, t_dlist *stack_b)
     if (swap(stack_b) == -1)
         return (-1);
     ft_putendl_fd ("ss", 1);
+    return (1);
 }
 
 int pa(t_dlist *stack_a,t_dlist *stack_b)
@@ -56,6 +59,7 @@ int ra(t_dlist *stack)
     if (rotate_ttb(stack) == -1)
         return (-1);
     ft_putendl_fd ("ra", 1);
+    return (1);
 }
 
 int rb(t_dlist *stack)
@@ -63,6 +67,7 @@ int rb(t_dlist *stack)
     if (rotate_ttb(stack) == -1)
         return (-1);
     ft_putendl_fd ("rb", 1);
+    return (1);
 }
 
 int rr(t_dlist *stack_a, t_dlist *stack_b)
@@ -72,6 +77,7 @@ int rr(t_dlist *stack_a, t_dlist *stack_b)
     if (rotate_ttb(stack_b) == -1)
         return (-1);
     ft_putendl_fd ("rr", 1);
+    return (1);
 }
 
 int rra(t_dlist *stack)
@@ -79,6 +85,7 @@ int rra(t_dlist *stack)
     if (rotate_ttb(stack) == -1)
         return (-1);
     ft_putendl_fd ("rra", 1);
+    return (1);
 }
 
 int rrb(t_dlist *stack)
@@ -86,6 +93,7 @@ int rrb(t_dlist *stack)
     if (rotate_btt(stack) == -1)
         return (-1);
     ft_putendl_fd ("rrb", 1);
+    return (1);
 }
 
 int rrr(t_dlist *stack_a, t_dlist *stack_b)
@@ -95,4 +103,5 @@ int rrr(t_dlist *stack_a, t_dlist *stack_b)
     if (rotate_btt(stack_b) == -1)
         return (-1);
     ft_putendl_fd ("rrr", 1);
+    return (1);
 }

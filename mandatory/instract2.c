@@ -6,13 +6,13 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 02:40:12 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/08 03:25:43 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/09 00:36:25 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void *dlist_pop_front(t_dlist *stack)
+int dlist_pop_front(t_dlist *stack)
 {
     int             value;
    t_dlist_item  *temp;
