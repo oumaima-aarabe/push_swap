@@ -6,64 +6,60 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:07:48 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/09 01:26:43 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/10 00:00:23 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int duplicate(char **strr)
+int duplicate(char **str)
 {
     int i;
     int j;
-    char **str;
     
-    str = strr;
-    i = 1;
-    while (*str && **str)
+    i = 0;
+    j = 1;
+    while (str[i])
     {
-        while (*(str + i) && **(str + i))
+        while (str[i + j])
         {
-            if (**(str) == **(str + i))
+            if (ft_atoi(str[i]) == ft_atoi(str[i + j]))
                     return (1);
-            i++;
+            j++;
         }
-        i = 1;
-        (*str)++;
+        j = 1;
+       i++;
     }
     return (0);
 }
 
-int num_check(char **strr)
+int num_check(char **str)
 {
-    char **str;
-    char *current_char;
+    int i = 1;
+    int j = 0;
 
-    str = strr;
-    current_char = *str;
-    printf("%s\n", current_char);
-    while (*str) 
+    while (str[i])
     {
-        while (*current_char != '\0')
-         {
-            if (*current_char == '+' || *current_char == '-')
+        while (str[i][j])
+        {
+            if (str[i][j] == '+' || str[i][j] == '-')
             {
-                current_char++;
+                j++;
+                continue;
             }
-            // printf ("[UPPP]\n");
-            while (ft_isdigit(*current_char))
-            {   
-                current_char++;
-            }
-            if (*current_char != '\0') 
+            while (ft_isdigit(str[i][j]))
             {
-                return 0;
+                j++;
+                if (str[i][j] == '\0')
+                    break;
             }
-            current_char++;
+            if (str[i][j] != '\0')
+                return 1;
         }
-        str++;
+        j = 0;
+        i++;
     }
-    return 1;
+    return 0;
 }
 
 int	is_sorted(char **str)
@@ -71,11 +67,10 @@ int	is_sorted(char **str)
 	int	i;
 
 	i = 0;
+    puts("oumi:");
 	while (*str)
 	{
-		if (ft_atoi(*str) < ft_atoi(*str + 1))
-			(*str)++;
-		else
+		if (ft_atoi(*str) > ft_atoi(++(*str)))
 			return (0);
 	}
 	return (1);
@@ -100,19 +95,21 @@ char **checker(int ac, char **av)
     splitted = ft_split(p, ' ');
     if (!splitted)
         return (NULL);
-    if (duplicate(splitted) || num_check(splitted))
+    if (duplicate(splitted) /*|| num_check(splitted)*/)
     {
 		ft_putendl_fd("error", 1);
         exit(1);
     }
-    return (splitted);
     // while (splitted && *splitted)
     // {
     //     printf("[%s]\n", *splitted++);
     // }
-    // if (is_sorted(splitted))
-    // {
-	// 	ft_putendl_fd("numbers are sorted", 1);
-    //     exit(0); 
-    // }
+    if (is_sorted(splitted))
+    {
+		ft_putendl_fd("numbers are sorted", 1);
+        exit(0); 
+    }
+    else
+        printf("life s good");
+    return (splitted);
 }

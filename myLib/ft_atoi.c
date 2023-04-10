@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 05:01:53 by ouaarabe          #+#    #+#             */
-/*   Updated: 2022/10/30 01:10:49 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/09 22:59:52 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 void	check_im(long result)
 {
 	if (result > 2147483647 || result < -2147483648)
-		ft_putendl_fd("error", 1);
-		exit (1);
+		{
+            write (1, "error\n", 6);
+		    exit (0);
+        }
 }
 
 int	ft_atoi(const char *str)

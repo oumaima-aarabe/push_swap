@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 22:10:59 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/09 00:37:52 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/09 23:57:00 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ int main(int argc, char **argv)
     if (!splitted)
         return (1);
 
-    while (splitted && *splitted)
-    {
-        printf("[%s]\n", *splitted++);
-    }
+    // while (splitted && *splitted)
+    // {
+    //     printf("[%s]\n", *splitted++);
+    // }
     return (0);
     // stack_a->head->data = args[0];
     // t_dlist *a;
