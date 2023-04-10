@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:07:48 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/10 00:00:23 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/10 01:36:04 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,18 +62,18 @@ int num_check(char **str)
     return 0;
 }
 
-int	is_sorted(char **str)
+int is_sorted(char **str)
 {
-	int	i;
-
-	i = 0;
-    puts("oumi:");
-	while (*str)
-	{
-		if (ft_atoi(*str) > ft_atoi(++(*str)))
-			return (0);
-	}
-	return (1);
+    int prev_num;
+    
+    prev_num = ft_atoi(*str++);
+    while(*str)
+    {
+         if (ft_atoi(*str++) < prev_num)
+         return (0);
+         prev_num = ft_atoi(*(str - 1));
+    }
+    return (1);
 }
 
 char **checker(int ac, char **av)
@@ -82,7 +82,7 @@ char **checker(int ac, char **av)
     char *p;
     char *tmp = NULL;
     char **splitted = NULL;     
-    if (ac == 1)
+    if (ac < 2)
         exit(0);
     p = ft_strdup("");
     while (i < ac)
@@ -95,21 +95,16 @@ char **checker(int ac, char **av)
     splitted = ft_split(p, ' ');
     if (!splitted)
         return (NULL);
-    if (duplicate(splitted) /*|| num_check(splitted)*/)
+    if (duplicate(splitted) || num_check(splitted))
     {
 		ft_putendl_fd("error", 1);
         exit(1);
     }
-    // while (splitted && *splitted)
-    // {
-    //     printf("[%s]\n", *splitted++);
-    // }
     if (is_sorted(splitted))
     {
 		ft_putendl_fd("numbers are sorted", 1);
         exit(0); 
     }
     else
-        printf("life s good");
     return (splitted);
 }
