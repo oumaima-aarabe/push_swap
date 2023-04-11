@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 08:05:11 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/03/29 22:30:57 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/11 02:55:13 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2, char c)
 	if (!s1 || !s2)
 		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2);
-	join = (char *)malloc(sizeof(char) * (len + 1));
+	join = (char *)malloc(sizeof(char) * (len + 2));
 	if (!join)
 		return (NULL);
 	i = 0;

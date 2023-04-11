@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:07:48 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/11 02:30:54 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/11 02:56:29 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,26 +36,20 @@ int duplicate(char **str)
 int num_check(char **str)
 {
 	int i = 0;
-	int j;
+	int j = 0;
+
 	while (str[i])
 	{
 		j = 0;
-		if (str[i][j] == '+' || str[i][j] == '-')
-			j++;
 		while (str[i][j])
-			if (!ft_isdigit(str[i][j++]))
+		{
+			if (str[i][j] && !j && (str[i][j] == '+' || str[i][j] == '-'))
+				j++;
+			if (str[i][j] && !ft_isdigit(str[i][j]))
 				return(1);
+			j++;
+		}
 		i++;
-		// while (str[i] && str[i][j])
-		// {
-		// 	if (str[i][j] && !j && (str[i][j] == '+' || str[i][j] == '-'))
-		// 		j++;
-		// 	else if (str[i][j] && j && (str[i][j] == '+' || str[i][j] == '-'))
-		// 		return(1);
-		// 	if (str[i][j] && !ft_isdigit(str[i][j]))
-		// 		return(1);
-		// 	j++;
-		// }
 	}
 	return 0;
 }
