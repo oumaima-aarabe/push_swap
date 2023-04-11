@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 22:10:59 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/11 01:55:42 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/11 01:59:44 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int main(int argc, char **argv)
     t_dlist *stack_a;
     t_dlist *stack_tmp;
     int i;
-    char **splitted = NULL;
-    
+    char **splitted;
+
     stack_a = NULL;
     splitted = checker(argc, argv);
     if (!splitted)
