@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:07:48 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/10 01:36:04 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/10 22:42:05 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ char **checker(int ac, char **av)
         return (NULL);
     if (duplicate(splitted) || num_check(splitted))
     {
-		ft_putendl_fd("error", 1);
+		ft_putendl_fd("yaaaaa weld l9ehba", 1);
         exit(1);
     }
     if (is_sorted(splitted))

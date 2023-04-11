@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 22:10:59 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/10 01:27:37 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/11 00:19:50 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,34 @@
 
 int main(int argc, char **argv)
 {
-    struct dlist *stack_a;
+    t_dlist *stack_a;
+    t_dlist *stack_tmp;
+    int i;
     char **splitted = NULL;
+    
 
     splitted = checker(argc, argv);
     if (!splitted)
         return (1);
+    while (splitted && *splitted)
+    {
+        new_node(stack_a, ft_atoi(*splitted));
+        (*splitted)++;
+    }
+    stack_tmp = stack_a;
+    i = stack_tmp->size;
+    while (i--)
+    {
+        printf("%d\n", stack_tmp->head->data);
+        stack_tmp->head = stack_tmp->head->next;
+    }
+    return (0);
+}
 
     // while (splitted && *splitted)
     // {
     //     printf("[%s]\n", *splitted++);
     // }
-    return (0);
     // stack_a->head->data = args[0];
     // t_dlist *a;
     // a = malloc(sizeof(t_dlist));
@@ -47,4 +63,4 @@ int main(int argc, char **argv)
     // swap(a);
     // printf("%d\n", a->head->data);
     // printf("%d\n", (a->head)->next->data);
-}
+    

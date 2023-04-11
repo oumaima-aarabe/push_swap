@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:08:27 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/09 00:37:02 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/10 22:50:35 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ typedef struct s_dlist
     size_t size;
     t_dlist_item *head;
 } t_dlist;
+
 char **checker(int ac, char **av);
+
 t_dlist_item *dlist_init(int data);
 
 
@@ -49,4 +51,6 @@ int duplicate(char **str);
 int num_check(char **str);
 
 int	is_sorted(char **str);
+
+void	new_node(t_dlist *list, int nbr);
 #endif
