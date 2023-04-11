@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 22:10:59 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/11 00:19:50 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/11 01:55:42 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ int main(int argc, char **argv)
     int i;
     char **splitted = NULL;
     
-
+    stack_a = NULL;
     splitted = checker(argc, argv);
     if (!splitted)
         return (1);
     while (splitted && *splitted)
     {
-        new_node(stack_a, ft_atoi(*splitted));
-        (*splitted)++;
+        new_node(&stack_a, ft_atoi(*splitted));
+        splitted++;
     }
     stack_tmp = stack_a;
     i = stack_tmp->size;

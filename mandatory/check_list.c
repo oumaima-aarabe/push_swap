@@ -6,32 +6,32 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 01:40:03 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/11 00:20:50 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/11 01:55:18 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	new_node(t_dlist *list, int nbr)
+void	new_node(t_dlist **list, int nbr)
 {
 	t_dlist_item	*new;
     
     new = dlist_init(nbr);
-    if (!(list))
+    if (!(*list))
     {  
-        puts("oumi:");
-        (list)->head = new; 
+		*list  = (t_dlist *)malloc(sizeof(t_dlist));
+        (*list)->head = new; 
         new->next = new;
         new->prev = new;
-        (list)->size = 1;
+        (*list)->size = 1;
     }
 	else
 	{
-		new->next = (list)->head;
-		new->prev = (list)->head->prev;
-		((list)->head->prev)->next = new;
-		(list)->head->prev = new;
-		(list)->size++;
+		new->next = (*list)->head;
+		new->prev = (*list)->head->prev;
+		((*list)->head->prev)->next = new;
+		(*list)->head->prev = new;
+		(*list)->size++;
 	}
 }
 
