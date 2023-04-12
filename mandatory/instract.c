@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 22:13:51 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/09 00:35:51 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/12 04:22:04 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int rr(t_dlist *stack_a, t_dlist *stack_b)
 
 int rra(t_dlist *stack)
 {
-    if (rotate_ttb(stack) == -1)
+    if (rotate_btt(stack) == -1)
         return (-1);
     ft_putendl_fd ("rra", 1);
     return (1);

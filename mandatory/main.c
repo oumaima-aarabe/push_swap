@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 22:10:59 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/11 01:59:44 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/12 03:46:18 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 int main(int argc, char **argv)
 {
     t_dlist *stack_a;
-    t_dlist *stack_tmp;
-    int i;
     char **splitted;
 
     stack_a = NULL;
@@ -29,13 +27,13 @@ int main(int argc, char **argv)
         new_node(&stack_a, ft_atoi(*splitted));
         splitted++;
     }
-    stack_tmp = stack_a;
-    i = stack_tmp->size;
-    while (i--)
+    which_sort (stack_a);
+    while (stack_a->size--)
     {
-        printf("%d\n", stack_tmp->head->data);
-        stack_tmp->head = stack_tmp->head->next;
+        printf ("%d\n", stack_a->head->data);
+        stack_a->head = stack_a->head->next;
     }
+    
     return (0);
 }
 
