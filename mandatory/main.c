@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 22:10:59 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/12 03:46:18 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/14 22:27:30 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ int main(int argc, char **argv)
         splitted++;
     }
     which_sort (stack_a);
-    while (stack_a->size--)
-    {
-        printf ("%d\n", stack_a->head->data);
-        stack_a->head = stack_a->head->next;
-    }
+    // while (stack_a->size--)
+    // {
+    //     printf ("%d\n", stack_a->head->data);
+    //     stack_a->head = stack_a->head->next;
+    // }
     
     return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:13:58 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/12 04:19:40 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/14 22:39:22 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,13 @@ t_dlist_item *dlist_init(int data)
 
 int min_pos(t_dlist *dlist)
 {
+
     int pos_min;
     t_dlist *temp;
     int min;
     int i;
     
+    // puts ("oumi:\n");
     pos_min = 1;
     temp = dlist;
     min = temp->head->data;
@@ -44,9 +46,13 @@ int min_pos(t_dlist *dlist)
             min = temp->head->data;
             pos_min = i;
         }
+            printf("data mn :  %d\n", temp->head->data);
+
         temp->head = temp->head->next;
         i++;;
     }
+    printf("min :%d\n", pos_min);
+
     return pos_min;
 }
 
@@ -69,8 +75,11 @@ int max_pos(t_dlist *dlist)
             max = temp->head->data;
             pos_max = i;
         }
+            printf("data mx :  %d\n", temp->head->data);
+
         temp->head = temp->head->next;
         i++;;
     }
+    printf("max :%d\n", pos_max);
     return pos_max;
 }

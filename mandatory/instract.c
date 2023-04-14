@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 22:13:51 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/12 04:22:04 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/14 22:17:01 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int ss(t_dlist *stack_a, t_dlist *stack_b)
 
 int pa(t_dlist *stack_a,t_dlist *stack_b)
 {
-    if(dlist_push_front(stack_a, stack_b) == -1)
+    if(dlist_push_front(&stack_a, stack_b) == -1)
         return (-1);
     ft_putendl_fd("pa", 1);
     return (1);
@@ -48,7 +48,8 @@ int pa(t_dlist *stack_a,t_dlist *stack_b)
 
 int pb(t_dlist *stack_a,t_dlist *stack_b)
 {
-    if(dlist_push_front(stack_b, stack_a) == -1)
+
+    if(dlist_push_front(&stack_b, stack_a) == -1)
         return (-1);
     ft_putendl_fd("pb", 1);
     return (1);

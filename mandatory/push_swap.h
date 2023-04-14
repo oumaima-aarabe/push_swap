@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:08:27 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/12 03:46:54 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/14 21:49:49 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_dlist_item *dlist_init(int data);
 char **checker(int ac, char **av);
 
 int dlist_pop_front(t_dlist *stack);
-int dlist_push_front(t_dlist *list, t_dlist *list2);
+int dlist_push_front(t_dlist **list, t_dlist *list2);
 int swap(t_dlist *stack);
 int rotate_ttb(t_dlist *stack);
 int rotate_btt(t_dlist *stack);
@@ -47,7 +47,6 @@ int	is_sorted(char **str);
 int min_pos(t_dlist *dlist);
 int max_pos(t_dlist *dlist);
 int dlist_pop_front(t_dlist *stack);
-int dlist_push_front(t_dlist *list, t_dlist *list2);
 int swap(t_dlist *stack);
 int rotate_ttb(t_dlist *stack);
 int rotate_btt(t_dlist *stack);
@@ -66,8 +65,8 @@ int pb(t_dlist *stack_a, t_dlist *stack_b);
 
 void	new_node(t_dlist **list, int nbr);
 void which_sort(t_dlist *stack_a);
-void sh_sort(t_dlist *stack_a);
-void lg_sort(t_dlist *stack_a);
+void sh_sort(t_dlist *stack_a, t_dlist *stack_b);
+void lg_sort(t_dlist *stack_a, t_dlist *stack_b);
 void _3sort(t_dlist *stack_a);
 
 

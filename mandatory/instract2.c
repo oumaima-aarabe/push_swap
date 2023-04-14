@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 02:40:12 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/09 00:36:25 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/14 22:15:31 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,26 +23,31 @@ int dlist_pop_front(t_dlist *stack)
     value = temp->data;
     stack->head = stack->head->next;
     free(temp);
+    stack->size--;
     return (value); 
 }
 
-int dlist_push_front(t_dlist *list, t_dlist *list2)
+int dlist_push_front(t_dlist **list, t_dlist *list2)
 {
     t_dlist_item *node;
-    
-	if (list)
-	{
-        node = dlist_init(dlist_pop_front(list2));
-        if(node == NULL)
+    if (!(*list))
+    {
+        new_node(list, dlist_pop_front(list2));
+        if(*list == NULL)
             return (-1);
-        node->prev = list->head->prev;
-        node->next = list->head;
-        (list->head->prev)->next = node;
-        list->head->prev = node;
-        list->head = node;
-        return (1);
-	}
-    return (-1);
+    }
+    else
+    {
+        node = dlist_init(dlist_pop_front(list2));
+        node->prev = (*list)->head->prev;
+        node->next = (*list)->head;
+        ((*list)->head->prev)->next = node;
+        (*list)->head->prev = node;
+        (*list)->head = node;
+        (*list)->size++;
+    }
+    return (1);
+
 }
 
 int swap(t_dlist *stack)
