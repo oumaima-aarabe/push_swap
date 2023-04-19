@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:13:58 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/14 22:39:22 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/19 05:28:21 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_dlist_item *dlist_init(int data)
     return (d);
 }
 
-int min_pos(t_dlist *dlist)
+int min_pos(t_dlist **dlist)
 {
 
     int pos_min;
@@ -35,28 +35,25 @@ int min_pos(t_dlist *dlist)
     
     // puts ("oumi:\n");
     pos_min = 1;
-    temp = dlist;
+    temp = *dlist;
     min = temp->head->data;
     i = 1;
-        
     while (i <= temp->size)
     {
+
         if (temp->head->data < min)
         {
             min = temp->head->data;
             pos_min = i;
         }
-            printf("data mn :  %d\n", temp->head->data);
-
         temp->head = temp->head->next;
-        i++;;
+        i++;
     }
-    printf("min :%d\n", pos_min);
 
     return pos_min;
 }
 
-int max_pos(t_dlist *dlist)
+int max_pos(t_dlist **dlist)
 {
     int pos_max;
     t_dlist *temp;
@@ -65,7 +62,7 @@ int max_pos(t_dlist *dlist)
 
     pos_max = 1;
     i = 1;
-    temp = dlist;
+    temp = *dlist;
     max = temp->head->data;
         
     while (i <= temp->size)
@@ -75,11 +72,8 @@ int max_pos(t_dlist *dlist)
             max = temp->head->data;
             pos_max = i;
         }
-            printf("data mx :  %d\n", temp->head->data);
-
         temp->head = temp->head->next;
-        i++;;
+        i++;
     }
-    printf("max :%d\n", pos_max);
     return pos_max;
 }

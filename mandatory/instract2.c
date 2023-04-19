@@ -6,28 +6,36 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 02:40:12 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/14 22:15:31 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/19 05:27:48 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int dlist_pop_front(t_dlist *stack)
+int dlist_pop_front(t_dlist **stack)
 {
     int             value;
    t_dlist_item  *temp;
     
-    if(!stack)
-        return (-1);    
-    temp = stack->head;
-    value = temp->data;
-    stack->head = stack->head->next;
+    value = (*stack)->head->data;
+    // if(!(*stack))
+    //     return (-1);    
+    // temp = (*stack)->head;
+    // ((*stack)->head->prev)->next = (*stack)->head->next;
+    // ((*stack)->head->next)->prev = (*stack)->head->next;
+    // (*stack)->head = (*stack)->head->next;
+    // free(temp);
+    // (*stack)->size--;
+    temp = (*stack)->head;
+    (*stack)->head->prev->next = (*stack)->head->next;
+    (*stack)->head->next->prev = (*stack)->head->prev;
+    (*stack)->head = (*stack)->head->next;
     free(temp);
-    stack->size--;
+    (*stack)->size--;
     return (value); 
 }
 
-int dlist_push_front(t_dlist **list, t_dlist *list2)
+int dlist_push_front(t_dlist **list, t_dlist **list2)
 {
     t_dlist_item *node;
     if (!(*list))
@@ -41,8 +49,6 @@ int dlist_push_front(t_dlist **list, t_dlist *list2)
         node = dlist_init(dlist_pop_front(list2));
         node->prev = (*list)->head->prev;
         node->next = (*list)->head;
-        ((*list)->head->prev)->next = node;
-        (*list)->head->prev = node;
         (*list)->head = node;
         (*list)->size++;
     }
@@ -50,32 +56,40 @@ int dlist_push_front(t_dlist **list, t_dlist *list2)
 
 }
 
-int swap(t_dlist *stack)
+int swap(t_dlist **stack)
 {
     int data;
-    if (!stack)
+    if (!(*stack))
         return (-1);
-    data = stack->head->data;
-    stack->head->data = (stack->head)->next->data;
-    (stack->head)->next->data = data;
+    data = (*stack)->head->data;
+    (*stack)->head->data = ((*stack)->head)->next->data;
+    ((*stack)->head)->next->data = data;
     return (1);
 }
 
-int rotate_ttb(t_dlist *stack)
+int rotate_ttb(t_dlist **stack)
 {
-   
-    if (!stack)
+    t_dlist_item *tmp;
+    
+    if (!(*stack))
         return (-1);
-    stack->head = stack->head->next;
+    tmp = (*stack)->head;
+    // (*stack)->head->prev = (*stack)->head;
+    (*stack)->head = (*stack)->head->next;
+    // (*stack)->head->next = (tmp->next)->next;
     return (1);
 }
 
-int rotate_btt(t_dlist *stack)
+int rotate_btt(t_dlist **stack)
 {
-
-    if (!stack)
+    // t_dlist_item *tmp;
+    
+    if (!(*stack))
         return (-1);
-    stack->head = stack->head->prev;
+    // tmp = (*stack)->head->prev->prev;
+    // (*stack)->head->next = (*stack)->head;
+    // (*stack)->head->prev = tmp;
+    (*stack)->head = (*stack)->head->prev;
     return (1); 
 }
 
