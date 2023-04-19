@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting.c                                          :+:      :+:    :+:   */
+/*   sorting_sh.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 02:57:53 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/19 05:33:41 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/19 09:42:54 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void sh_sort(t_dlist **stack_a, t_dlist **stack_b)
 {
     int pos;
     int i = 0;
-    static int hh;
     
     if ((*stack_a)->size == 2)
         sa(stack_a);
@@ -50,8 +49,6 @@ void sh_sort(t_dlist **stack_a, t_dlist **stack_b)
 			else
 				rra(stack_a);
 			pos = min_pos(stack_a);
-            if (hh++ == 4)
-                exit(0);
 		}
 		pb(stack_a, stack_b);
 		sh_sort(stack_a, stack_b);
@@ -59,10 +56,6 @@ void sh_sort(t_dlist **stack_a, t_dlist **stack_b)
     }
 }
 
-void lg_sort(t_dlist **stack_a, t_dlist **stack_b)
-{
-    return;
-}
 void which_sort(t_dlist **stack_a)
 {
     t_dlist **stack_b;
@@ -71,7 +64,7 @@ void which_sort(t_dlist **stack_a)
     if (!*stack_a)
         return;
     
-    if ((*stack_a)->size < 7)
+    if ((*stack_a)->size <= 7)
         sh_sort(stack_a, stack_b);
     else
         lg_sort(stack_a, stack_b);

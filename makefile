@@ -6,7 +6,7 @@
 #    By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/29 22:08:18 by ouaarabe          #+#    #+#              #
-#    Updated: 2023/04/14 22:17:53 by ouaarabe         ###   ########.fr        #
+#    Updated: 2023/04/19 08:32:16 by ouaarabe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,15 +21,10 @@ SRC	=	mandatory/instract.c\
 		mandatory/parsing.c\
 		mandatory/utils.c\
 		mandatory/check_list.c\
-		mandatory/sorting.c\
+		mandatory/sorting_lg.c\
+		mandatory/sorting_sh.c\
 
-OBJ	=	mandatory/instract.o\
-		mandatory/instract2.o\
-		mandatory/main.o\
-		mandatory/parsing.o\
-		mandatory/utils.o\
-		mandatory/check_list.o\
-		mandatory/sorting.o\
+OBJ	=	${SRC:.c=.o}
 
 
 INC		=	mandatory/push_swap.h

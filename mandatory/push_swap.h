@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:08:27 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/19 04:33:19 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/19 09:05:05 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@
 
 typedef struct s_dlist_item
 {
-    int data;
-    struct s_dlist_item *next;
-    struct s_dlist_item *prev;
+	int data;
+	struct s_dlist_item *next;
+	struct s_dlist_item *prev;
 }   t_dlist_item;
 
 typedef struct s_dlist
 {
-    size_t size;
-    t_dlist_item *head;
+	size_t size;
+	t_dlist_item *head;
 } t_dlist;
 
 t_dlist_item *dlist_init(int data);
@@ -60,10 +60,15 @@ int pb(t_dlist **stack_a, t_dlist **stack_b);
 
 
 void	new_node(t_dlist **list, int nbr);
-void which_sort(t_dlist **stack_a);
-void sh_sort(t_dlist **stack_a, t_dlist **stack_b);
-void lg_sort(t_dlist **stack_a, t_dlist **stack_b);
-void _3sort(t_dlist **stack_a);
+void	which_sort(t_dlist **stack_a);
+void	sh_sort(t_dlist **stack_a, t_dlist **stack_b);
+void	lg_sort(t_dlist **stack_a, t_dlist **stack_b);
+void	_3sort(t_dlist **stack_a);
+void	qwik_sort(int **table, int lenght);
+void	sort_swap(t_dlist **stack_a, t_dlist **stack_b, int i, int j);
+void	fill_a(t_dlist **stack_a, t_dlist **stack_b);
+void	fill_t(int **table, t_dlist **list);
+void	lg_sort(t_dlist **stack_a, t_dlist **stack_b);
 
 
 #endif

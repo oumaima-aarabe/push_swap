@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 01:40:03 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/19 04:33:58 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/19 06:10:41 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 void	new_node(t_dlist **list, int nbr)
 {
 	t_dlist_item	*new;
-    
-    new = dlist_init(nbr);
-    if (!(*list))
-    {
-		*list  = (t_dlist *)malloc(sizeof(t_dlist));
-        (*list)->head = new; 
-        new->next = new;
-        new->prev = new;
-        (*list)->size = 1;
-    }
+
+	new = dlist_init(nbr);
+	if (!(*list))
+	{
+		*list = (t_dlist *)malloc(sizeof(t_dlist));
+		(*list)->head = new;
+		new->next = new;
+		new->prev = new;
+		(*list)->size = 1;
+	}
 	else
 	{
 		new->next = (*list)->head;
