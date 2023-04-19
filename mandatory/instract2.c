@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 02:40:12 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/19 05:27:48 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/19 05:32:49 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,9 @@ int dlist_pop_front(t_dlist **stack)
     int             value;
    t_dlist_item  *temp;
     
+    if(!(*stack))
+        return (-1);    
     value = (*stack)->head->data;
-    // if(!(*stack))
-    //     return (-1);    
-    // temp = (*stack)->head;
-    // ((*stack)->head->prev)->next = (*stack)->head->next;
-    // ((*stack)->head->next)->prev = (*stack)->head->next;
-    // (*stack)->head = (*stack)->head->next;
-    // free(temp);
-    // (*stack)->size--;
     temp = (*stack)->head;
     (*stack)->head->prev->next = (*stack)->head->next;
     (*stack)->head->next->prev = (*stack)->head->prev;
@@ -69,26 +63,17 @@ int swap(t_dlist **stack)
 
 int rotate_ttb(t_dlist **stack)
 {
-    t_dlist_item *tmp;
     
     if (!(*stack))
         return (-1);
-    tmp = (*stack)->head;
-    // (*stack)->head->prev = (*stack)->head;
     (*stack)->head = (*stack)->head->next;
-    // (*stack)->head->next = (tmp->next)->next;
     return (1);
 }
 
 int rotate_btt(t_dlist **stack)
 {
-    // t_dlist_item *tmp;
-    
     if (!(*stack))
         return (-1);
-    // tmp = (*stack)->head->prev->prev;
-    // (*stack)->head->next = (*stack)->head;
-    // (*stack)->head->prev = tmp;
     (*stack)->head = (*stack)->head->prev;
     return (1); 
 }

@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 02:57:53 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/19 05:23:33 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/19 05:33:41 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void _3sort(t_dlist **stack_a)
 
     max = max_pos(stack_a);
     min = min_pos(stack_a);
-    // printf("value :%d\n", (*stack_a)->head->data);
     if (min  == 2 && max == 1)
         ra(stack_a);
     else if (min == 3 && max == 2)
