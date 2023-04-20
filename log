@@ -1,26 +1,570 @@
 ra
 ra
-ra
-ra
-pb
 pb
 ra
 ra
 ra
 ra
+pb
+sb
 ra
 ra
-head_a_bf : 1
- head_a_bf : 2
- head_a_bf : 3
- head_a_bf : 9
- head_a_bf : -5
- head_a_bf : 0
- head_a_bf : 7
- head_a_bf : 88
- head_a_bf : 1
- head_a_bf : 2
- head_a_bf : 3
- head_a_bf : 9
- head_a_bf : 7
- 
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+pb
+pb
+rb
+pb
+ra
+pb
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+ra
+pb
+pb
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+{a before : 32100}
+[b before: 6549]
+[b before: 3234]
+[b before: 341]
+[b before: 100]
+[b before: 10]
+[b before: 6]
+[b before: 5]
+[b before: 0]
+[b before: -4]
+[b before: -6]
+[b before: -7]
+[b before: -112135]
+[b before: -9]
+[b before: -88]
+[b before: -88]
+{a after: 6549}
+{a after: 32100}
+[b after: 3234]
+[b after: 341]
+[b after: 100]
+[b after: 10]
+[b after: 6]
+[b after: 5]
+[b after: 0]
+[b after: -4]
+[b after: -6]
+[b after: -7]
+[b after: -112135]
+[b after: -9]
+[b after: -88]
+[b after: 3234]
+{a before : 6549}
+{a before : 32100}
+[b before: 3234]
+[b before: 341]
+[b before: 100]
+[b before: 10]
+[b before: 6]
+[b before: 5]
+[b before: 0]
+[b before: -4]
+[b before: -6]
+[b before: -7]
+[b before: -112135]
+[b before: -9]
+[b before: -88]
+[b before: 3234]
+{a after: 3234}
+{a after: 6549}
+{a after: 32100}
+[b after: 341]
+[b after: 100]
+[b after: 10]
+[b after: 6]
+[b after: 5]
+[b after: 0]
+[b after: -4]
+[b after: -6]
+[b after: -7]
+[b after: -112135]
+[b after: -9]
+[b after: -88]
+[b after: 341]
+{a before : 3234}
+{a before : 6549}
+{a before : 32100}
+[b before: 341]
+[b before: 100]
+[b before: 10]
+[b before: 6]
+[b before: 5]
+[b before: 0]
+[b before: -4]
+[b before: -6]
+[b before: -7]
+[b before: -112135]
+[b before: -9]
+[b before: -88]
+[b before: 341]
+{a after: 341}
+{a after: 3234}
+{a after: 6549}
+{a after: 32100}
+[b after: 100]
+[b after: 10]
+[b after: 6]
+[b after: 5]
+[b after: 0]
+[b after: -4]
+[b after: -6]
+[b after: -7]
+[b after: -112135]
+[b after: -9]
+[b after: -88]
+[b after: 100]
+{a before : 341}
+{a before : 3234}
+{a before : 6549}
+{a before : 32100}
+[b before: 100]
+[b before: 10]
+[b before: 6]
+[b before: 5]
+[b before: 0]
+[b before: -4]
+[b before: -6]
+[b before: -7]
+[b before: -112135]
+[b before: -9]
+[b before: -88]
+[b before: 100]
+{a after: 100}
+{a after: 341}
+{a after: 3234}
+{a after: 6549}
+{a after: 32100}
+[b after: 10]
+[b after: 6]
+[b after: 5]
+[b after: 0]
+[b after: -4]
+[b after: -6]
+[b after: -7]
+[b after: -112135]
+[b after: -9]
+[b after: -88]
+[b after: 10]
+{a before : 100}
+{a before : 341}
+{a before : 3234}
+{a before : 6549}
+{a before : 32100}
+[b before: 10]
+[b before: 6]
+[b before: 5]
+[b before: 0]
+[b before: -4]
+[b before: -6]
+[b before: -7]
+[b before: -112135]
+[b before: -9]
+[b before: -88]
+[b before: 10]
+{a after: 10}
+{a after: 100}
+{a after: 341}
+{a after: 3234}
+{a after: 6549}
+{a after: 32100}
+[b after: 6]
+[b after: 5]
+[b after: 0]
+[b after: -4]
+[b after: -6]
+[b after: -7]
+[b after: -112135]
+[b after: -9]
+[b after: -88]
+[b after: 6]
+{a before : 10}
+{a before : 100}
+{a before : 341}
+{a before : 3234}
+{a before : 6549}
+{a before : 32100}
+[b before: 6]
+[b before: 5]
+[b before: 0]
+[b before: -4]
+[b before: -6]
+[b before: -7]
+[b before: -112135]
+[b before: -9]
+[b before: -88]
+[b before: 6]
+{a after: 6}
+{a after: 10}
+{a after: 100}
+{a after: 341}
+{a after: 3234}
+{a after: 6549}
+{a after: 32100}
+[b after: 5]
+[b after: 0]
+[b after: -4]
+[b after: -6]
+[b after: -7]
+[b after: -112135]
+[b after: -9]
+[b after: -88]
+[b after: 5]
+{a before : 6}
+{a before : 10}
+{a before : 100}
+{a before : 341}
+{a before : 3234}
+{a before : 6549}
+{a before : 32100}
+[b before: 5]
+[b before: 0]
+[b before: -4]
+[b before: -6]
+[b before: -7]
+[b before: -112135]
+[b before: -9]
+[b before: -88]
+[b before: 5]
+{a after: 5}
+{a after: 6}
+{a after: 10}
+{a after: 100}
+{a after: 341}
+{a after: 3234}
+{a after: 6549}
+{a after: 32100}
+[b after: 0]
+[b after: -4]
+[b after: -6]
+[b after: -7]
+[b after: -112135]
+[b after: -9]
+[b after: -88]
+[b after: 0]
+{a before : 5}
+{a before : 6}
+{a before : 10}
+{a before : 100}
+{a before : 341}
+{a before : 3234}
+{a before : 6549}
+{a before : 32100}
+[b before: 0]
+[b before: -4]
+[b before: -6]
+[b before: -7]
+[b before: -112135]
+[b before: -9]
+[b before: -88]
+[b before: 0]
+{a after: 0}
+{a after: 5}
+{a after: 6}
+{a after: 10}
+{a after: 100}
+{a after: 341}
+{a after: 3234}
+{a after: 6549}
+{a after: 32100}
+[b after: -4]
+[b after: -6]
+[b after: -7]
+[b after: -112135]
+[b after: -9]
+[b after: -88]
+[b after: -4]
+{a before : 0}
+{a before : 5}
+{a before : 6}
+{a before : 10}
+{a before : 100}
+{a before : 341}
+{a before : 3234}
+{a before : 6549}
+{a before : 32100}
+[b pa
+pa
+pa
+rb
+pa
+pa
+pa
+pa
+before: -4]
+[b before: -6]
+[b before: -7]
+[b before: -112135]
+[b before: -9]
+[b before: -88]
+[b before: -4]
+{a after: -4}
+{a after: 0}
+{a after: 5}
+{a after: 6}
+{a after: 10}
+{a after: 100}
+{a after: 341}
+{a after: 3234}
+{a after: 6549}
+{a after: 32100}
+[b after: -6]
+[b after: -7]
+[b after: -112135]
+[b after: -9]
+[b after: -88]
+[b after: -6]
+{a before : -4}
+{a before : 0}
+{a before : 5}
+{a before : 6}
+{a before : 10}
+{a before : 100}
+{a before : 341}
+{a before : 3234}
+{a before : 6549}
+{a before : 32100}
+[b before: -6]
+[b before: -7]
+[b before: -112135]
+[b before: -9]
+[b before: -88]
+[b before: -6]
+{a after: -6}
+{a after: -4}
+{a after: 0}
+{a after: 5}
+{a after: 6}
+{a after: 10}
+{a after: 100}
+{a after: 341}
+{a after: 3234}
+{a after: 6549}
+{a after: 32100}
+[b after: -7]
+[b after: -112135]
+[b after: -9]
+[b after: -88]
+[b after: -7]
+{a before : -6}
+{a before : -4}
+{a before : 0}
+{a before : 5}
+{a before : 6}
+{a before : 10}
+{a before : 100}
+{a before : 341}
+{a before : 3234}
+{a before : 6549}
+{a before : 32100}
+[b before: -7]
+[b before: -112135]
+[b before: -9]
+[b before: -88]
+[b before: -7]
+{a after: -7}
+{a after: -6}
+{a after: -4}
+{a after: 0}
+{a after: 5}
+{a after: 6}
+{a after: 10}
+{a after: 100}
+{a after: 341}
+{a after: 3234}
+{a after: 6549}
+{a after: 32100}
+[b after: -112135]
+[b after: -9]
+[b after: -88]
+[b after: -112135]
+{a before : -7}
+{a before : -6}
+{a before : -4}
+{a before : 0}
+{a before : 5}
+{a before : 6}
+{a before : 10}
+{a before : 100}
+{a before : 341}
+{a before : 3234}
+{a before : 6549}
+{a before : 32100}
+[b before: -9]
+[b before: -88]
+[b before: -112135]
+[b before: -9]
+{a after: -9}
+{a after: -7}
+{a after: -6}
+{a after: -4}
+{a after: 0}
+{a after: 5}
+{a after: 6}
+{a after: 10}
+{a after: 100}
+{a after: 341}
+{a after: 3234}
+{a after: 6549}
+{a after: 32100}
+[b after: -88]
+[b after: -88]
+[b after: -88]
+{a before : -9}
+{a before : -7}
+{a before : -6}
+{a before : -4}
+{a before : 0}
+{a before : 5}
+{a before : 6}
+{a before : 10}
+{a before : 100}
+{a before : 341}
+{a before : 3234}
+{a before : 6549}
+{a before : 32100}
+[b before: -88]
+[b before: -88]
+[b before: -88]
+{a after: -88}
+{a after: -9}
+{a after: -7}
+{a after: -6}
+{a after: -4}
+{a after: 0}
+{a after: 5}
+{a after: 6}
+{a after: 10}
+{a after: 100}
+{a after: 341}
+{a after: 3234}
+{a after: 6549}
+{a after: 32100}
+[b after: -88]
+[b after: -88]
+{a before : -88}
+{a before : -9}
+{a before : -7}
+{a before : -6}
+{a before : -4}
+{a before : 0}
+{a before : 5}
+{a before : 6}
+{a before : 10}
+{a before : 100}
+{a before : 341}
+{a before : 3234}
+{a before : 6549}
+{a before : 32100}
+[b before: -88]
+[b before: -88]
+{a after: -88}
+{a after: -88}
+{a after: -9}
+{a after: -7}
+{a after: -6}
+{a after: -4}
+{a after: 0}
+{a after: 5}
+{a after: 6}
+{a after: 10}
+{a after: 100}
+{a after: 341}
+{a after: 3234}
+{a after: 6549}
+{a after: 32100}
+[b after: -88]
+{a before : -88}
+{a before : -88}
+{a before : -9}
+{a before : -7}
+{a before : -6}
+{a before : -4}
+{a before : 0}
+{a before : 5}
+{a before : 6}
+{a before : 10}
+{a before : 100}
+{a before : 341}
+{a before : 3234}
+{a before : 6549}
+{a before : 32100}
+[b before: -88]
+{a after: -88}
+{a after: -88}
+{a after: -88}
+{a after: -9}
+{a after: -7}
+{a after: -6}
+{a after: -4}
+{a after: 0}
+{a after: 5}
+{a after: 6}
+{a after: 10}
+{a after: 100}
+{a after: 341}
+{a after: 3234}
+{a after: 6549}
+{a after: 32100}
+-88
+-88
+-88
+-9
+-7
+-6
+-4
+0
+5
+6
+10
+100
+341
+3234
+6549
+32100

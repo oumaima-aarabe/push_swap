@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:13:58 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/19 10:17:20 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/20 03:56:12 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int min_pos(t_dlist **dlist)
     int min;
     int i;
     
-    // puts ("oumi:\n");
     pos_min = 1;
     temp = *dlist;
     min = temp->head->data;

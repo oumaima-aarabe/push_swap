@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 02:40:12 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/19 10:49:24 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/20 05:56:26 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,20 @@ int dlist_pop_front(t_dlist **stack)
    t_dlist_item  *temp;
     
     if(!(*stack))
-        return (-1);    
+        return (-1);
     value = (*stack)->head->data;
+    if ((*stack)->size == 1)
+    {
+        free((*stack)->head);
+        (*stack)->size--;
+        (*stack)->head = NULL;
+        return (value);
+    }
     temp = (*stack)->head;
     (*stack)->head->prev->next = (*stack)->head->next;
     (*stack)->head->next->prev = (*stack)->head->prev;
     (*stack)->head = (*stack)->head->next;
-    free(temp);
+    // free(temp);
     (*stack)->size--;
     return (value); 
 }

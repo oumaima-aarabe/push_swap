@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 06:03:32 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/19 10:50:44 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/20 07:10:30 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void sort_swap(t_dlist **stack_a, t_dlist **stack_b, int i, int j)
 		ra(stack_a);
 }
 
-void	qwik_sort(int **table, int lenght)
+void	fake_sort(int **table, int lenght)
 {
 	int		tmp;
 	int		i;
@@ -53,6 +53,7 @@ void	qwik_sort(int **table, int lenght)
 void	fill_a(t_dlist **stack_a, t_dlist **stack_b)
 {
 	int mx_pos;
+	
 	while((*stack_b) && (*stack_b)->size > 1)
 	{
 		mx_pos = max_pos(stack_b);
@@ -66,6 +67,7 @@ void	fill_a(t_dlist **stack_a, t_dlist **stack_b)
 		}
 		if (mx_pos == 1)
 			pa(stack_a, stack_b);
+			// printf("{{%d}}\n", (*stack_a)->head->data);
 	}	
 }
 
@@ -97,10 +99,13 @@ void lg_sort(t_dlist **stack_a, t_dlist **stack_b)
 		table = NULL;
 		table = malloc((*stack_a)->size * sizeof(int));
 		fill_t(&table, stack_a);
-		qwik_sort(&table, (*stack_a)->size);
+		fake_sort(&table, (*stack_a)->size);
 		i = table[(*stack_a)->size / 8];
 		j = table[((*stack_a)->size /9)/2];
 		sort_swap(stack_a, stack_b, i, j);
 	}
+	// sh_sort(stack_a, stack_b);
 	fill_a(stack_a, stack_b);
+	if(stack_b)
+		pa(stack_a, stack_b);
 }

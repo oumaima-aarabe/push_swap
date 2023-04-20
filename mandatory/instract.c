@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 22:13:51 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/19 10:49:33 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/20 07:10:53 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,21 +40,58 @@ int	ss(t_dlist **stack_a, t_dlist **stack_b)
 
 int	pa(t_dlist **stack_a, t_dlist **stack_b)
 {
+	
 	if (dlist_push_front(stack_a, stack_b) == -1)
 		return (-1);
 	ft_putendl_fd("pa", 1);
+	
 	return (1);
 }
 
 int	pb(t_dlist **stack_a, t_dlist **stack_b)
 {
+	// int z = (*stack_a)->size;
+	// t_dlist_item *tmp = (*stack_a)->head;
+	// while(z--)
+	// {
+	// 	printf("{a before : %d}\n", tmp->data);
+	// 	tmp = tmp->next;
+	// }
+	// if (*stack_b)
+	// {
+ 	// 	z = (*stack_b)->size;
+	// 	tmp = (*stack_b)->head;
+	// 	while(z--)
+	// 	{
+	// 		printf("[b before: %d]\n", tmp->data);
+	// 		tmp = tmp->next;
+	// 	}
+	// }
+	// //before
 	dlist_push_front(stack_b, stack_a);
 	ft_putendl_fd("pb", 1);
+	// //after
+	// z = (*stack_a)->size;
+	// tmp = (*stack_a)->head;
+	// while(z--)
+	// {
+	// 	printf("{a after: %d}\n", tmp->data);
+	// 	tmp = tmp->next;
+	// }
+ 	// z = (*stack_b)->size;
+	// tmp = (*stack_b)->head;
+	// while(z--)
+	// {
+	// 	printf("[b after: %d]\n", tmp->data);
+	// 	tmp = tmp->next;
+	// }
 	return (1);
 }
 
 int	ra(t_dlist **stack)
 {
+	if((*stack)->size == 2)
+		return(sa(stack));
 	if (rotate_ttb(stack) == -1)
 		return (-1);
 	ft_putendl_fd("ra", 1);
@@ -63,24 +100,24 @@ int	ra(t_dlist **stack)
 
 int	rb(t_dlist **stack)
 {
-	int z;
-	t_dlist_item *temp;
-	z = (*stack)->size;
-		temp = (*stack)->head;
-		while(z--)
-		{
-			printf("[[[[[%d]]]]]\n", temp->data);
-			temp = temp->next;
-		}
+	int z = (*stack)->size;
+	t_dlist_item *tmp = (*stack)->head;
+	while(z--)
+	{
+		printf("{b before : %d}\n", tmp->data);
+		tmp = tmp->next;
+	}
+	if((*stack)->size == 2)
+		return(sb(stack));
 	if (rotate_ttb(stack) == -1)
 		return (-1);
 	ft_putendl_fd("rb", 1);
 	z = (*stack)->size;
-	temp = (*stack)->head;
+	tmp = (*stack)->head;
 	while(z--)
 	{
-		printf("{{{%d}}}\n", temp->data);
-		temp = temp->next;
+		printf("[b after: %d]\n", tmp->data);
+		tmp = tmp->next;
 	}
 	return (1);
 }
@@ -97,6 +134,8 @@ int	rr(t_dlist **stack_a, t_dlist **stack_b)
 
 int	rra(t_dlist **stack)
 {
+	if((*stack)->size == 2)
+		return(sa(stack));
 	if (rotate_btt(stack) == -1)
 		return (-1);
 	ft_putendl_fd("rra", 1);
@@ -105,6 +144,8 @@ int	rra(t_dlist **stack)
 
 int	rrb(t_dlist **stack)
 {
+	if((*stack)->size == 2)
+		return(sb(stack));
 	if (rotate_btt(stack) == -1)
 		return (-1);
 	ft_putendl_fd("rrb", 1);

@@ -3,5 +3,14 @@
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": []
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "push_swap",
+            "program": "/Users/ouaarabe/Desktop/swap_push/push_swap",
+            "args": ["22 9 -9 6 -4 100 -99 77 16 64 32 -42 -1337 -69"],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
 }
