@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 02:40:12 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/20 05:56:26 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/25 11:24:10 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int dlist_pop_front(t_dlist **stack)
 {
     int             value;
    t_dlist_item  *temp;
-    
+
     if(!(*stack))
         return (-1);
     value = (*stack)->head->data;
@@ -31,7 +31,7 @@ int dlist_pop_front(t_dlist **stack)
     (*stack)->head->prev->next = (*stack)->head->next;
     (*stack)->head->next->prev = (*stack)->head->prev;
     (*stack)->head = (*stack)->head->next;
-    // free(temp);
+    free(temp);
     (*stack)->size--;
     return (value); 
 }
@@ -41,7 +41,11 @@ int dlist_push_front(t_dlist **list, t_dlist **list2)
     t_dlist_item *node;
     if (!(*list))
     {
-        new_node(list, dlist_pop_front(list2));
+        *list = malloc(sizeof(t_dlist));
+        (*list)->head = dlist_init(dlist_pop_front(list2));
+        (*list)->head->next = (*list)->head;
+        (*list)->head->prev = (*list)->head;
+        (*list)->size = 1;
         if(*list == NULL)
             return (-1);
     }
@@ -54,12 +58,12 @@ int dlist_push_front(t_dlist **list, t_dlist **list2)
         (*list)->size++;
     }
     return (1);
-
 }
 
 int swap(t_dlist **stack)
 {
     int data;
+
     if (!(*stack))
         return (-1);
     data = (*stack)->head->data;
@@ -70,7 +74,6 @@ int swap(t_dlist **stack)
 
 int rotate_ttb(t_dlist **stack)
 {
-    
     if (!(*stack))
         return (-1);
     (*stack)->head = (*stack)->head->next;

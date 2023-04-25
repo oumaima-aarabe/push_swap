@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 22:13:51 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/20 07:10:53 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/25 10:08:07 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,26 +100,42 @@ int	ra(t_dlist **stack)
 
 int	rb(t_dlist **stack)
 {
-	int z = (*stack)->size;
-	t_dlist_item *tmp = (*stack)->head;
-	while(z--)
+	// if((*stack)->size == 2)
+	// 	return(sb(stack));
+	//         t_dlist_item *a;
+    //   a = (*stack)->head;
+    // while (a)
+    // {
+    //     printf("%d  -->\n", a->data);
+    //     a = a->next;
+    //     if (a == (*stack)->head)
+    //         break ;
+    // }
+    // printf("-----\n");
+	int i = 0;
+	while (i++ < (*stack)->size + 1)
 	{
-		printf("{b before : %d}\n", tmp->data);
-		tmp = tmp->next;
+		printf("%d --->\n", (*stack)->head->data);
+		(*stack)->head = (*stack)->head->next;
 	}
-	if((*stack)->size == 2)
-		return(sb(stack));
-	if (rotate_ttb(stack) == -1)
-		return (-1);
+      if (!(*stack))
+        return (-1);
+    (*stack)->head = (*stack)->head->next;
+    return (1);
+	// if (rotate_ttb(stack) == -1)
+	// 	return (-1);
 	ft_putendl_fd("rb", 1);
-	z = (*stack)->size;
-	tmp = (*stack)->head;
-	while(z--)
-	{
-		printf("[b after: %d]\n", tmp->data);
-		tmp = tmp->next;
-	}
-	return (1);
+	// return (1);
+
+    //   a = (*stack)->head;
+    // while (a)
+    // {
+    //     printf("%d  -->\n", a->data);
+    //     a = a->next;
+    //     if (a == (*stack)->head)
+    //         break ;
+    // }
+    exit(1);
 }
 
 int	rr(t_dlist **stack_a, t_dlist **stack_b)
