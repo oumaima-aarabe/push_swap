@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instract2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aelbrahm <aelbrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 02:40:12 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/25 11:24:10 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/25 12:50:46 by aelbrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ int dlist_push_front(t_dlist **list, t_dlist **list2)
         node = dlist_init(dlist_pop_front(list2));
         node->prev = (*list)->head->prev;
         node->next = (*list)->head;
+		(*list)->head->prev->next = node;
+        (*list)->head->prev = node;
         (*list)->head = node;
         (*list)->size++;
     }

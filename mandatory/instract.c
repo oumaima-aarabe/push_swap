@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instract.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aelbrahm <aelbrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 22:13:51 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/25 10:08:07 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/25 14:51:23 by aelbrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,10 @@ int	pb(t_dlist **stack_a, t_dlist **stack_b)
 	// 		tmp = tmp->next;
 	// 	}
 	// }
-	// //before
+	//before
 	dlist_push_front(stack_b, stack_a);
 	ft_putendl_fd("pb", 1);
-	// //after
+	//after
 	// z = (*stack_a)->size;
 	// tmp = (*stack_a)->head;
 	// while(z--)
@@ -112,12 +112,12 @@ int	rb(t_dlist **stack)
     //         break ;
     // }
     // printf("-----\n");
-	int i = 0;
-	while (i++ < (*stack)->size + 1)
-	{
-		printf("%d --->\n", (*stack)->head->data);
-		(*stack)->head = (*stack)->head->next;
-	}
+	// int i = 0;
+	// while (i++ < (*stack)->size + 1)
+	// {
+	// 	printf("%d --->\n", (*stack)->head->data);
+	// 	(*stack)->head = (*stack)->head->next;
+	// }
       if (!(*stack))
         return (-1);
     (*stack)->head = (*stack)->head->next;
@@ -135,7 +135,7 @@ int	rb(t_dlist **stack)
     //     if (a == (*stack)->head)
     //         break ;
     // }
-    exit(1);
+    // exit(1);
 }
 
 int	rr(t_dlist **stack_a, t_dlist **stack_b)
@@ -150,8 +150,8 @@ int	rr(t_dlist **stack_a, t_dlist **stack_b)
 
 int	rra(t_dlist **stack)
 {
-	if((*stack)->size == 2)
-		return(sa(stack));
+	// if((*stack)->size == 2)
+	// 	return(sa(stack));
 	if (rotate_btt(stack) == -1)
 		return (-1);
 	ft_putendl_fd("rra", 1);
@@ -160,8 +160,8 @@ int	rra(t_dlist **stack)
 
 int	rrb(t_dlist **stack)
 {
-	if((*stack)->size == 2)
-		return(sb(stack));
+	// if((*stack)->size == 2)
+	// 	return(sb(stack));
 	if (rotate_btt(stack) == -1)
 		return (-1);
 	ft_putendl_fd("rrb", 1);

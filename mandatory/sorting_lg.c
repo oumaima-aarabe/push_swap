@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting_lg.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aelbrahm <aelbrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 06:03:32 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/20 07:10:30 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/26 14:35:46 by aelbrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	fake_sort(int **table, int lenght)
 	}
 }
 
+// 9awdi 9adi hadi **************
 void	fill_a(t_dlist **stack_a, t_dlist **stack_b)
 {
 	int mx_pos;

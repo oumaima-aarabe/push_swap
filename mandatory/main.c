@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aelbrahm <aelbrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 22:10:59 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/25 09:44:03 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/25 14:51:35 by aelbrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main(int argc, char **argv)
         printf ("%d\n", stack_a->head->data);
         stack_a->head = stack_a->head->next;
     }
-    exit(0);
+    // exit(0);
     
     return (0);
 }
