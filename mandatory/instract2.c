@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instract2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelbrahm <aelbrahm@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 02:40:12 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/25 12:50:46 by aelbrahm         ###   ########.fr       */
+/*   Updated: 2023/04/29 16:31:03 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,34 +73,3 @@ int swap(t_dlist **stack)
     ((*stack)->head)->next->data = data;
     return (1);
 }
-
-int rotate_ttb(t_dlist **stack)
-{
-    if (!(*stack))
-        return (-1);
-    (*stack)->head = (*stack)->head->next;
-    return (1);
-}
-
-int rotate_btt(t_dlist **stack)
-{
-    if (!(*stack))
-        return (-1);
-    (*stack)->head = (*stack)->head->prev;
-    return (1); 
-}
-
-// void *dlist_pop_back(struct dlist *stack)
-// {
-//     int             value;
-//     struct dlist    *temp;
-    
-//     if(!stack)
-//         return (-1);    
-//     temp = stack->tail;
-//     value = temp->tail->data;
-//     stack->tail = stack->tail->prev;
-//     stack->tail->next = NULL;
-//     free(temp);
-//     return (value); 
-// }

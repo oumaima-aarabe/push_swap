@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 05:01:53 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/19 06:08:01 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/26 21:19:54 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	check_im(long result)
 {
 	if (result > 2147483647 || result < -2147483648)
 	{
-		write (1, "error\n", 6);
+		write (2, "Error\n", 6);
 		exit (0);
 	}
 }
