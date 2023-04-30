@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 01:40:03 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/30 23:40:20 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/30 23:43:25 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,54 +38,54 @@ void	new_node(t_dlist **list, int nbr)
 	}
 }
 
-int mostly_rsorted(t_dlist **list , int *pos)
-{
-	t_dlist_item *tmp;
-	int i;
-	int j;
+// int mostly_rsorted(t_dlist **list , int *pos)
+// {
+// 	t_dlist_item *tmp;
+// 	int i;
+// 	int j;
 
-	*pos = 1;
-	i = 1;
-	j = 0;
-	tmp = (*list)->head;
-	while((j++ <= (*list)->size) && (i < ((*list)->size / 8)))
-	{
-		if (tmp->data > tmp->next->data)
-		{
-			if (!i)
-				*pos = j;
-		 	i++;
-		}
-		else
-			i = 0;
-		tmp = tmp->next;
-	}
-	return (i);
-}
+// 	*pos = 1;
+// 	i = 1;
+// 	j = 0;
+// 	tmp = (*list)->head;
+// 	while((j++ <= (*list)->size) && (i < ((*list)->size / 8)))
+// 	{
+// 		if (tmp->data > tmp->next->data)
+// 		{
+// 			if (!i)
+// 				*pos = j;
+// 		 	i++;
+// 		}
+// 		else
+// 			i = 0;
+// 		tmp = tmp->next;
+// 	}
+// 	return (i);
+// }
 
-int sorted(t_dlist **list)
-{
-	t_dlist_item *tmp;
-	int i;
-	int j;
+// int sorted(t_dlist **list)
+// {
+// 	t_dlist_item *tmp;
+// 	int i;
+// 	int j;
 
-	i = 1;
-	j = 0;
-	tmp = (*list)->head;
-	while((j++ <= (*list)->size))
-	{
-		if (tmp->data < tmp->next->data)
-		 	i++;
-		else
-			return (0);
-		tmp = tmp->next;
-	}
-	printf ("%d\n\n\n%d\n\n", i, (*list)->size);
-	if (i == (*list)->size)
-		return (1);
-	return (0);
+// 	i = 1;
+// 	j = 0;
+// 	tmp = (*list)->head;
+// 	while((j++ <= (*list)->size))
+// 	{
+// 		if (tmp->data < tmp->next->data)
+// 		 	i++;
+// 		else
+// 			return (0);
+// 		tmp = tmp->next;
+// 	}
+// 	printf ("%d\n\n\n%d\n\n", i, (*list)->size);
+// 	if (i == (*list)->size)
+// 		return (1);
+// 	return (0);
 	
-}
+// }
 void	minimize(t_dlist **stack_a, t_dlist **stack_b)
 {
 	// int pos;
