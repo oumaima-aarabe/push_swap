@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 02:40:12 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/29 16:31:03 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/30 23:01:47 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int dlist_pop_front(t_dlist **stack)
    t_dlist_item  *temp;
 
     if(!(*stack))
-        return (-1);
+        return -1;
     value = (*stack)->head->data;
     if ((*stack)->size == 1)
     {
@@ -39,6 +39,8 @@ int dlist_pop_front(t_dlist **stack)
 int dlist_push_front(t_dlist **list, t_dlist **list2)
 {
     t_dlist_item *node;
+    if (!(*list2))
+        return (-1);
     if (!(*list))
     {
         *list = malloc(sizeof(t_dlist));
@@ -66,10 +68,19 @@ int swap(t_dlist **stack)
 {
     int data;
 
-    if (!(*stack))
+    if (!(*stack) || (*stack)->size < 2)
         return (-1);
     data = (*stack)->head->data;
     (*stack)->head->data = ((*stack)->head)->next->data;
     ((*stack)->head)->next->data = data;
     return (1);
+}
+int	rrr(t_dlist **stack_a, t_dlist **stack_b)
+{
+     if (((*stack_a)->size < 2) || ((*stack_b)->size < 2))
+        return (-1);
+	(*stack_a)->head = (*stack_a)->head->prev;
+	(*stack_b)->head = (*stack_b)->head->prev;
+	ft_putendl_fd("rrr", 1);
+	return (1);
 }

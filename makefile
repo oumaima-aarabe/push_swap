@@ -6,7 +6,7 @@
 #    By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/29 22:08:18 by ouaarabe          #+#    #+#              #
-#    Updated: 2023/04/25 09:28:31 by ouaarabe         ###   ########.fr        #
+#    Updated: 2023/04/30 22:56:08 by ouaarabe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRC	=	mandatory/instract.c\
 		mandatory/check_list.c\
 		mandatory/sorting_lg.c\
 		mandatory/sorting_sh.c\
+		mandatory/innstract1.c\
 
 OBJ	=	${SRC:.c=.o}
 
@@ -30,7 +31,7 @@ OBJ	=	${SRC:.c=.o}
 INC		=	mandatory/push_swap.h
 
 CC			=	gcc
-CFLAG		=	 -fsanitize=address
+CFLAGS		=	 -fsanitize=address
 RM			=	rm -rf
 
 all: $(UTILS) $(NAME)

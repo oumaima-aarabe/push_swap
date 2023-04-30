@@ -2,6 +2,7 @@
     "files.associations": {
         "*.excalidraw": "json",
         "*.excalidrawlib": "json",
-        "random": "c"
+        "random": "c",
+        "fcntl.h": "c"
     }
 }

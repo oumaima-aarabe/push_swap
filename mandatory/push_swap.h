@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:08:27 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/29 16:40:11 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/30 23:32:01 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,11 @@ void	sort_swap(t_dlist **stack_a, t_dlist **stack_b, int i, int j);
 void	fill_a(t_dlist **stack_a, t_dlist **stack_b);
 void	fill_t(int **table, t_dlist **list);
 void	lg_sort(t_dlist **stack_a, t_dlist **stack_b);
+int		mostly_rsorted(t_dlist **list, int *pos);
+void	minimize(t_dlist **stack_a, t_dlist **stack_b);
+int 	sorted(t_dlist **list);
+
+
 
 
 #endif

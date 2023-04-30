@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 02:57:53 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/19 09:42:54 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/30 22:59:08 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,14 @@ void sh_sort(t_dlist **stack_a, t_dlist **stack_b)
 
 void which_sort(t_dlist **stack_a)
 {
-    t_dlist **stack_b;
+    t_dlist *stack_b;
 
-    stack_b = ft_calloc(sizeof(*stack_b), 1);
-    if (!*stack_a)
-        return;
-    
+    // stack_b = ft_calloc(sizeof(t_dlist), 1);
+    // if (!*stack_b)
+    //     return;
+    stack_b = NULL;
     if ((*stack_a)->size <= 7)
-        sh_sort(stack_a, stack_b);
+        sh_sort(stack_a, &stack_b);
     else
-        lg_sort(stack_a, stack_b);
+        minimize(stack_a, &stack_b);
 }
