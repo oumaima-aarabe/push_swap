@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leet <leet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:07:48 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/30 23:11:15 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/04 00:55:54 by leet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,14 +79,15 @@ char **checker(int ac, char **av)
 	p = ft_strdup("");
 	while (i < ac)
 	{
+		tmp = p;
 		p = ft_strjoin(p, av[i], ' ');
 		free (tmp);
-		tmp = p;
 		i++;
 	}
 	splitted = ft_split(p, ' ');
 	if (!splitted)
 		return (NULL);
+	free(p);
 	if (duplicate(splitted) || num_check(splitted))
 	{
 		ft_putendl_fd("Error\n", 2);

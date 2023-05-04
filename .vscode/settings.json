@@ -3,6 +3,7 @@
         "*.excalidraw": "json",
         "*.excalidrawlib": "json",
         "random": "c",
-        "fcntl.h": "c"
+        "fcntl.h": "c",
+        "cstdlib": "c"
     }
 }

@@ -3,23 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leet <leet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 22:10:59 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/26 21:27:52 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/04 03:31:04 by leet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "push_swap.h"
 
+void hh()
+{
+    
+    system("leaks push_swap");
+}
+
 int main(int argc, char **argv)
 {
     t_dlist *stack_a;
     char **splitted;
+    char **tmpss;
+
+    atexit(hh);
 
     stack_a = NULL;
     splitted = checker(argc, argv);
+    tmpss = splitted;
     if (!splitted)
         return (1);
     while (splitted && *splitted)
@@ -34,7 +44,18 @@ int main(int argc, char **argv)
     //     stack_a->head = stack_a->head->next;
     // }
     // exit(0);
-    
+    t_dlist_item *tmp = NULL;
+    int i = 0;
+    while(stack_a->size--)
+    {
+        free(tmpss[i]);
+        i++;
+        tmp = stack_a->head;
+        stack_a->head = stack_a->head->next;
+        free(tmp);
+    }
+    free(tmpss);
+    free(stack_a);
     return (0);
 }
 

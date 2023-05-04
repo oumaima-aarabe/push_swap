@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leet <leet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:08:27 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/30 23:32:01 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/04 00:39:00 by leet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_dlist_item
 {
 	int data;
 	struct s_dlist_item *next;
+	
 	struct s_dlist_item *prev;
 }   t_dlist_item;
 
@@ -31,6 +32,8 @@ typedef struct s_dlist
 	size_t size;
 	t_dlist_item *head;
 } t_dlist;
+
+
 
 t_dlist_item *dlist_init(int data);
 
@@ -57,6 +60,7 @@ int rrr(t_dlist **stack_a, t_dlist **stack_b);
 int ss(t_dlist **stack_a, t_dlist **stack_b);
 int pa(t_dlist **stack_a, t_dlist **stack_b);
 int pb(t_dlist **stack_a, t_dlist **stack_b);
+void hh();
 
 
 void	new_node(t_dlist **list, int nbr);

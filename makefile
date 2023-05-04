@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+         #
+#    By: leet <leet@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/29 22:08:18 by ouaarabe          #+#    #+#              #
-#    Updated: 2023/04/30 22:56:08 by ouaarabe         ###   ########.fr        #
+#    Updated: 2023/05/04 01:02:29 by leet             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ OBJ	=	${SRC:.c=.o}
 INC		=	mandatory/push_swap.h
 
 CC			=	gcc
-CFLAGS		=	 -fsanitize=address
+# CFLAGS		=	 -fsanitize=address
 RM			=	rm -rf
 
 all: $(UTILS) $(NAME)
@@ -39,7 +39,7 @@ all: $(UTILS) $(NAME)
 $(NAME): $(OBJ) $(INC)
 	@ $(CC) $(CFLAGS) $(UTILS) -o $@ $(OBJ)
 
-%.o: %.c
+%.o: %.c $(INC)
 	@ $(CC) $(CFLAGS) -c $< -o $@
 
 $(UTILS):

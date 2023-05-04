@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instract2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leet <leet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 02:40:12 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/30 23:01:47 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/04 03:29:57 by leet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int dlist_pop_front(t_dlist **stack)
     {
         free((*stack)->head);
         (*stack)->size--;
-        (*stack)->head = NULL;
+        // (*stack)->head = NULL;
+        free(*stack);
         return (value);
     }
     temp = (*stack)->head;
@@ -39,8 +40,10 @@ int dlist_pop_front(t_dlist **stack)
 int dlist_push_front(t_dlist **list, t_dlist **list2)
 {
     t_dlist_item *node;
+    
     if (!(*list2))
         return (-1);
+    
     if (!(*list))
     {
         *list = malloc(sizeof(t_dlist));

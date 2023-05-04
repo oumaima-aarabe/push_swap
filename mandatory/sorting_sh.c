@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting_sh.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leet <leet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 02:57:53 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/30 22:59:08 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/04 02:19:29 by leet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,5 @@ void which_sort(t_dlist **stack_a)
     if ((*stack_a)->size <= 7)
         sh_sort(stack_a, &stack_b);
     else
-        minimize(stack_a, &stack_b);
+        lg_sort(stack_a, &stack_b);
 }

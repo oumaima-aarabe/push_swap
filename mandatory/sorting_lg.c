@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting_lg.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: leet <leet@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 06:03:32 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/30 22:34:51 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/04 01:38:19 by leet             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	fill_a(t_dlist **stack_a, t_dlist **stack_b)
 		if (mx_pos == 1)
 			pa(stack_a, stack_b);
 			// printf("{{%d}}\n", (*stack_a)->head->data);
-	}	
+	}
 }
 
 void fill_t(int **table, t_dlist **list)
@@ -93,7 +93,6 @@ void lg_sort(t_dlist **stack_a, t_dlist **stack_b)
 	int i;
 	int j;
 	int *table;
-	int hh = 0;
 
 	while ((*stack_a)->size > 1)
 	{
@@ -103,6 +102,7 @@ void lg_sort(t_dlist **stack_a, t_dlist **stack_b)
 		bubble_sort(&table, (*stack_a)->size);
 		i = table[(*stack_a)->size / 8];
 		j = table[((*stack_a)->size /9)/2];
+		free(table);
 		sort_swap(stack_a, stack_b, i, j);
 	}
 	// sh_sort(stack_a, stack_b);
