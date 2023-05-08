@@ -6,7 +6,7 @@
 #    By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 01:11:39 by ouaarabe          #+#    #+#              #
-#    Updated: 2022/11/11 10:31:39 by ouaarabe         ###   ########.fr        #
+#    Updated: 2023/05/08 07:04:51 by ouaarabe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,18 +30,18 @@ RM = rm -rf
 NAME = libft.a
 
 %.o : %.c libft.h 
-	$(CC) -c $(CFLAGS) $< -o $@
+	@ $(CC) -c $(CFLAGS) $< -o $@
 
 ${NAME} : ${OBJS}
-	ar -rcs $@ ${OBJS}
+	@ ar -rcs $@ ${OBJS}
 
 all : ${NAME}
 
 clean :
-	${RM} ${OBJS} ${OBJ_B}
+	@ ${RM} ${OBJS} ${OBJ_B}
 
 fclean : clean
-	${RM} ${NAME}
+	@ ${RM} ${NAME}
 
 re : fclean all
 
