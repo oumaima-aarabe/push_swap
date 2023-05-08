@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 06:12:08 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/08 04:55:51 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/08 06:08:39 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,6 @@
 # endif
 
 char	*get_next_line(int fd);
-// size_t	ft_strlen(char *s);
 char	*ft_strjoiin(char *s1, char *s2);
-char	*ft_strchrr(char *str, int c);
-// char	*ft_strdup(char *s1);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 08:05:11 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/19 08:29:55 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/08 06:48:31 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,13 @@ char	*ft_strjoin(char const *s1, char const *s2, char c)
 	join = (char *)malloc(sizeof(char) * (len + 2));
 	if (!join)
 		return (NULL);
-	i = 0;
-	while (s1[i])
-	{
+	i = -1;
+	while (s1[++i])
 		join[i] = s1[i];
-		i++;
-	}
 	join[i++] = c;
-	j = 0;
-	while (s2[j])
-	{
+	j = -1;
+	while (s2[++j])
 		join[i + j] = s2[j];
-		j++;
-	}
 	join[i + j] = '\0';
 	return (join);
 }

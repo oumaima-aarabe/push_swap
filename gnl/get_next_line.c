@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 19:55:41 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/08 05:03:20 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/08 06:30:25 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_stat(char *s)
 
 	i = 0;
 	k = 0;
-	j = ft_strlen(s) - i + 1;
 	while (s[i] && s[i] != '\n')
 		i++;
 	if (s[i] && s[i] == '\n')
 		i++;
+	j = ft_strlen(s) - i + 1;
 	tmp = (char *)malloc(sizeof(char) * j);
 	if (!tmp)
 		return (NULL);
@@ -72,7 +72,7 @@ char	*get_line(int fd, char *s)
 	if (!buff)
 		return (NULL);
 	nbyte = 1;
-	while (!ft_strchrr(s, '\n') && nbyte != 0)
+	while (!ft_strchr(s, '\n') && nbyte != 0)
 	{
 		nbyte = read(fd, buff, BUFFER_SIZE);
 		if (nbyte == -1)

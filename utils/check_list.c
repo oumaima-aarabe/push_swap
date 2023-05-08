@@ -6,12 +6,11 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 01:40:03 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/04 23:05:22 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/08 06:57:44 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <fcntl.h>
+#include "../push_swap.h"
 
 void	new_node(t_dlist **list, int nbr)
 {
@@ -36,4 +35,10 @@ void	new_node(t_dlist **list, int nbr)
 		(*list)->head->prev = new;
 		(*list)->size++;
 	}
+}
+
+void	ft_error(void)
+{
+	ft_putstr_fd("Error\n", 2);
+	exit(1);
 }

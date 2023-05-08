@@ -6,7 +6,7 @@
 #    By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/29 22:08:18 by ouaarabe          #+#    #+#              #
-#    Updated: 2023/05/07 05:35:16 by ouaarabe         ###   ########.fr        #
+#    Updated: 2023/05/08 06:54:32 by ouaarabe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,22 +16,23 @@ NAME_B = checker
 UTILS		=	mylib/libft.a
 UTILS_DIR	=	mylib
 
-SRC	=	mandatory/instract.c\
-		mandatory/instract2.c\
+SRC	=	utils/instract.c\
+		utils/instract2.c\
+		utils/parsing.c\
+		utils/utils.c\
+		utils/check_list.c\
+		utils/innstract1.c\
 		mandatory/main.c\
-		mandatory/parsing.c\
-		mandatory/utils.c\
-		mandatory/check_list.c\
 		mandatory/sorting_lg.c\
 		mandatory/sorting_sh.c\
-		mandatory/innstract1.c\
 
-SRC_B	=	bonus/instract.c\
-			bonus/instract2.c\
-			bonus/checker.c\
-			bonus/parsing.c\
-			bonus/utils.c\
-			bonus/innstract1.c\
+SRC_B	=	checker.c\
+			utils/instract.c\
+			utils/instract2.c\
+			utils/parsing.c\
+			utils/utils.c\
+			utils/check_list.c\
+			utils/innstract1.c\
 			gnl/get_next_line.c\
 			gnl/get_next_line_utils.c\
 	
@@ -40,15 +41,10 @@ OBJ	=	${SRC:.c=.o}
 OBJ_B	=	${SRC_B:.c=.o}
 
 
-INC		=	mandatory/push_swap.h
-
-INC_B	=	bonus/push_swap_bonus.h\
-			# get_next_line.h\
+INC		=	push_swap.h
 
 CC			=	cc
-CFLAGS		=	-Wall -Wextra  -g
-# -werror
-# CFLAGS		=	-fsanitize=address
+CFLAGS		=	-Wall -Wextra -Werror
 RM			=	rm -rf
 
 all: $(UTILS) $(NAME)
@@ -56,7 +52,7 @@ all: $(UTILS) $(NAME)
 $(NAME): $(OBJ) $(INC)
 	@ $(CC) $(CFLAGS) $(UTILS) -o $@ $(OBJ)
 
-$(NAME_B): $(OBJ_B) $(INC_B)
+$(NAME_B): $(OBJ_B) $(INC)
 	@ $(CC) $(CFLAGS) $(UTILS) -o $@ $(OBJ_B)
 
 %.o: %.c $(INC)

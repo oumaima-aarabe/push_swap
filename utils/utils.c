@@ -6,11 +6,11 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:13:58 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/06 21:38:48 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/08 06:47:28 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 t_dlist_item	*dlist_init(int data)
 {
@@ -27,9 +27,9 @@ t_dlist_item	*dlist_init(int data)
 
 int	min_pos(t_dlist **dlist)
 {
-	int		pos_min;
-	t_dlist	*temp;
-	int		min;
+	int			pos_min;
+	t_dlist		*temp;
+	int			min;
 	size_t		i;
 
 	pos_min = 1;
@@ -53,7 +53,7 @@ int	max_pos(t_dlist **dlist)
 {
 	int				pos_max;
 	t_dlist_item	*temp;
-	size_t				i;
+	size_t			i;
 	int				max;
 
 	pos_max = 1;
