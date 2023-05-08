@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 06:12:08 by ouaarabe          #+#    #+#             */
-/*   Updated: 2022/11/24 21:38:24 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/08 04:55:51 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@
 # include <sys/uio.h>
 # include<stdio.h>
 # include <string.h>
+# include "../myLib/libft.h"
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
 
 char	*get_next_line(int fd);
-size_t	ft_strlen(char *s);
-char	*ft_strjoin(char *s1, char *s2);
-char	*ft_strchr(char *str, int c);
-void	*ft_calloc(size_t count, size_t size);
-char	*ft_strdup(char *s1);
+// size_t	ft_strlen(char *s);
+char	*ft_strjoiin(char *s1, char *s2);
+char	*ft_strchrr(char *str, int c);
+// char	*ft_strdup(char *s1);
 
 #endif

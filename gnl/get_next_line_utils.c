@@ -6,90 +6,57 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 03:05:50 by ouaarabe          #+#    #+#             */
-/*   Updated: 2022/11/24 23:25:54 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/07 01:21:09 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"get_next_line.h"
+#include <stdio.h>
 
-void	*ft_calloc(size_t count, size_t size)
+// void	*malloc(size_t count, size_t size)
+// {
+// 	char	*memory;
+// 	size_t	i;
+
+// 	i = 0;
+// 	memory = malloc(count * size);
+// 	if (!memory)
+// 		return (NULL);
+// 	while (i < count * size)
+// 		memory[i++] = 0;
+// 	return (memory);
+// }
+
+
+char	*ft_strjoiin(char *left_str, char *buff)
 {
-	char	*memory;
 	size_t	i;
+	size_t	j;
+	char	*str;
 
-	i = 0;
-	memory = malloc(count * size);
-	if (!memory)
-		return (NULL);
-	while (i < count * size)
-		memory[i++] = 0;
-	return (memory);
-}
-
-size_t	ft_strlen(char *s)
-{
-	const char	*c;
-
-	if (!s)
-		return (0);
-	c = s;
-	while (*c)
-		c++;
-	return ((size_t)(c - s));
-}
-
-char	*ft_strdup(char *s1)
-{
-	size_t	len;
-	char	*dup;
-	char	*assl;
-	size_t	i;
-
-	if (!s1)
-		return (0);
-	len = ft_strlen(s1);
-	assl = (char *)s1;
-	i = 0;
-	dup = (char *)ft_calloc(sizeof(*s1), (len + 1));
-	if (!dup)
-		return (NULL);
-	while (i < len)
+	if (!left_str)
 	{
-		dup[i] = assl[i];
-		i++;
+		left_str = (char *)malloc(1 * sizeof(char));
+		left_str[0] = '\0';
 	}
-	return (dup);
-}
-
-char	*ft_strjoin(char *s1, char *s2)
-{
-	size_t	ls1;
-	size_t	ls2;
-	char	*result;
-	ssize_t	i;
-	ssize_t	j;
-
+	if (!left_str || !buff)
+		return (NULL);
+	str = malloc(sizeof(char) * ((ft_strlen(left_str) + ft_strlen(buff)) + 1));
+	if (str == NULL)
+		return (NULL);
 	i = -1;
-	j = -1;
-	if (!s1)
-		s1 = ft_strdup("");
-	if (!s1 || !s2)
-		return (NULL);
-	ls1 = ft_strlen(s1);
-	ls2 = ft_strlen(s2);
-	result = ft_calloc((ls1 + ls2 + 1), sizeof(char));
-	if (result == NULL)
-		return (NULL);
-	while (s1[++i])
-			result[i] = s1[i];
-	while (s2[++j])
-		result[i + j] = s2[j];
-	free(s1);
-	s1 = NULL;
-	return (result);
+	j = 0;
+	if (left_str)
+		while (left_str[++i] != '\0')
+			str[i] = left_str[i];
+	while (buff[j] != '\0')
+		str[i++] = buff[j++];
+	str[ft_strlen(left_str) + ft_strlen(buff)] = '\0';
+	free(left_str);
+	return (str);
 }
 
-char	*ft_strchr(char *str, int c)
+char	*ft_strchrr(char *str, int c)
 {
 	size_t	len;
 	size_t	i;
@@ -106,3 +73,38 @@ char	*ft_strchr(char *str, int c)
 	}
 	return (0);
 }
+
+// size_t	ft_strlen(char *s)
+// {
+// 	const char	*c;
+
+// 	if (!s)
+// 		return (0);
+// 	c = s;
+// 	while (*c)
+// 		c++;
+// 	return ((size_t)(c - s));
+// }
+
+// char	*ft_strdup(char *s1)
+// {
+// 	size_t	len;
+// 	char	*dup;
+// 	char	*assl;
+// 	size_t	i;
+
+// 	if (!s1)
+// 		return (0);
+// 	len = ft_strlen(s1);
+// 	assl = (char *)s1;
+// 	i = 0;
+// 	dup = (char *)ft_calloc(sizeof(*s1), (len + 1));
+// 	if (!dup)
+// 		return (NULL);
+// 	while (i < len)
+// 	{
+// 		dup[i] = assl[i];
+// 		i++;
+// 	}
+// 	return (dup);
+// }

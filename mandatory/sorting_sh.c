@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 02:57:53 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/04 23:26:27 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/06 21:40:40 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	_3sort(t_dlist **stack_a)
 
 void	sh_sort(t_dlist **stack_a, t_dlist **stack_b)
 {
-	int	pos;
+	size_t	pos;
 	int	i;
 
 	i = 0;

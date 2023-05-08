@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 06:03:32 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/04 23:24:07 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/06 21:40:19 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,7 @@ void	bubble_sort(int **array, int length)
 
 void	fill_a(t_dlist **stack_a, t_dlist **stack_b)
 {
-	int	mx_pos;
-	int	max_cont;
+	size_t	mx_pos;
 	int	i;
 
 	i = 0;
@@ -77,7 +76,7 @@ void	fill_a(t_dlist **stack_a, t_dlist **stack_b)
 void	fill_t(int **table, t_dlist **list)
 {
 	t_dlist	*tmp;
-	int		i;
+	size_t		i;
 
 	i = 0;
 	tmp = (*list);
