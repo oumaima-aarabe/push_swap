@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 03:13:37 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/15 05:28:48 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/15 06:02:01 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ void	best_r(t_dlist **stack_b, size_t *low_index_moves, size_t *high_index_moves
 	size_t	lmx_pos;
 
 	mx_pos = max_pos(stack_b);
+	if (mx_pos == 1)
+	{
+		*high_index_moves = 0;
+		*low_index_moves = 1;
+		return;
+	}
 	lmx_pos = max_minus_pos(stack_b);
 	if (mx_pos > (*stack_b)->size / 2)
 		*high_index_moves = ((*stack_b)->size / 2) - mx_pos;

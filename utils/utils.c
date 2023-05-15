@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:13:58 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/15 04:14:23 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/15 06:02:22 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,20 +79,11 @@ int	max_minus_pos(t_dlist **dlist)
 	size_t			low_max_pos;
 	t_dlist_item	*temp;
 	size_t			i;
-	int			low_max;
-
+	int				low_max;
+	
 	pos_max = max_pos(dlist);
-	if(pos_max == 1)
-	{
-		i = 2;
-		low_max_pos = 2;
-	}
-	else
-	{
-		i = 1;
-		low_max_pos = 1;
-	}
 	i = 1;
+	low_max_pos = 1;
 	temp = (*dlist)->head;
 	low_max = temp->data;
 	while (i <= (*dlist)->size)
