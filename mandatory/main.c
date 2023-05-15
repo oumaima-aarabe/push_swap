@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 22:10:59 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/08 06:04:57 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/15 04:54:43 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,13 @@ int	main(int argc, char **argv)
 		splitted++;
 	}
 	which_sort (&stack_a);
+	// size_t d = (stack_a)->size;
+	// t_dlist_item *tmp = (stack_a)->head;
+	// while(d--)
+	// {
+	// 	printf("{{%d}}\n", tmp->data);
+	// 	tmp =  tmp->next;
+	// }
 	ferfer(stack_a, tmpss);
 	return (0);
 }

@@ -6,11 +6,26 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 02:57:53 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/08 06:48:55 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/15 02:16:01 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int	check_sorted(t_dlist *stack_a)
+{
+	int	i;
+	t_dlist_item	*tmp;
+	tmp = stack_a->head;
+	i = stack_a->size;
+	while (--i)
+	{	
+		if (tmp->data > tmp->next->data)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
+}
 
 void	_3sort(t_dlist **stack_a)
 {
@@ -51,6 +66,8 @@ void	sh_sort(t_dlist **stack_a, t_dlist **stack_b)
 				rra(stack_a, 1);
 			pos = min_pos(stack_a);
 		}
+		if (!(*stack_b) && check_sorted(*stack_a))
+			return;
 		pb(stack_a, stack_b, 1);
 		sh_sort(stack_a, stack_b);
 		pa(stack_a, stack_b, 1);

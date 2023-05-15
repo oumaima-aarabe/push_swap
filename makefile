@@ -6,7 +6,7 @@
 #    By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/29 22:08:18 by ouaarabe          #+#    #+#              #
-#    Updated: 2023/05/08 06:54:32 by ouaarabe         ###   ########.fr        #
+#    Updated: 2023/05/15 04:56:28 by ouaarabe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRC	=	utils/instract.c\
 		mandatory/main.c\
 		mandatory/sorting_lg.c\
 		mandatory/sorting_sh.c\
+		mandatory/testing_minimize.c\
 
 SRC_B	=	checker.c\
 			utils/instract.c\
@@ -44,7 +45,7 @@ OBJ_B	=	${SRC_B:.c=.o}
 INC		=	push_swap.h
 
 CC			=	cc
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -fsanitize=address
 RM			=	rm -rf
 
 all: $(UTILS) $(NAME)
