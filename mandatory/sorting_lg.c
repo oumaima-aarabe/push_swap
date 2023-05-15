@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 06:03:32 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/15 03:14:47 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/15 06:10:59 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	sort_swap(t_dlist **stack_a, t_dlist **stack_b, int i, int j)
 	{
 		ra(stack_a, 1);
 		if (!(*stack_b) && check_sorted(*stack_a))
-			return;
+			return ;
 	}
 }
 
@@ -55,30 +55,32 @@ void	bubble_sort(int **array, int length)
 	}
 }
 
-// void	fill_a(t_dlist **stack_a, t_dlist **stack_b)
-// {
-// 	size_t	mx_pos;
-// 	// size_t	lmx_pos;
-// 	int		i;
-// 	int		c;
+void	fill_a(t_dlist **stack_a, t_dlist **stack_b)
+{
+	size_t	max_prev;
+	size_t	max;
+	int		c;
 
-// 	c = 0;
-// 	i = 0;
-// 	while ((*stack_b) && (*stack_b)->size > 1)
-// 	{
-// 		mx_pos = max_pos(stack_b);
-// 		while (mx_pos != 1)
-// 		{
-// 			if (mx_pos <= (*stack_b)->size / 2)
-// 				rb(stack_b, 1);
-// 			else if (mx_pos > (*stack_b)->size / 2)
-// 				rrb(stack_b, 1);
-// 			mx_pos = max_pos(stack_b);
-// 		}
-// 		if (mx_pos == 1)
-// 			pa(stack_a, stack_b, 1);
-// 	}
-// }
+	c = 0;
+	while ((*stack_b) && (*stack_b)->size > 1)
+	{
+		if ((*stack_b)->size > 2)
+		{
+			best_r(stack_b, &max_prev, &max);
+			if (max_prev < max)
+			{
+				r_prev(stack_a, stack_b);
+				c = 1;
+			}
+		}
+		r_max(stack_a, stack_b);
+		if (c == 1)
+		{
+			sa(stack_a, 1);
+			c = 0;
+		}
+	}
+}
 
 void	fill_t(int **table, t_dlist **list)
 {
@@ -105,8 +107,8 @@ void	lg_sort(t_dlist **stack_a, t_dlist **stack_b)
 	{
 		table = NULL;
 		table = malloc((*stack_a)->size * sizeof(int));
-		if(!table)
-			return;
+		if (!table)
+			return ;
 		fill_t(&table, stack_a);
 		bubble_sort(&table, (*stack_a)->size);
 		i = table[(*stack_a)->size / 8];
@@ -114,7 +116,7 @@ void	lg_sort(t_dlist **stack_a, t_dlist **stack_b)
 		free(table);
 		sort_swap(stack_a, stack_b, i, j);
 	}
-	fill_a_min(stack_a, stack_b);
+	fill_a(stack_a, stack_b);
 	if (stack_b)
 		pa(stack_a, stack_b, 1);
 }

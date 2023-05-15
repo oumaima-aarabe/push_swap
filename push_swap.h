@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:08:27 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/15 03:14:29 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/15 06:14:35 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ void			checkerr(t_dlist *s_a, t_dlist *s_b);
 int				check_sorted(t_dlist *stack_a);
 void			instract(char *s, t_dlist **stack_a, t_dlist **stack_b);
 void			ft_error(void);
-int				max_minus_pos(t_dlist **dlist);
-void			fill_a_min(t_dlist **stack_a, t_dlist **stack_b);
+int				max_prev_pos(t_dlist **dlist);
+void			r_max(t_dlist **stack_a, t_dlist **stack_b);
+void			r_prev(t_dlist **stack_a, t_dlist **stack_b);
+void			best_r(t_dlist **stack_b, size_t *lim, size_t *him);
 #endif
