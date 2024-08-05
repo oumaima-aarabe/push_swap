@@ -33,5 +33,20 @@ To run Push Swap, follow these steps:
 3. Compile the project using the Makefile provided.
 4. Execute the program with a series of integers as arguments. For example:
    ```
+   make
    ./push_swap $(shuf -i 1-100000 | head -n 500 | tr '\n' ' ')
    ```
+
+## Bonus Part
+
+The checker which wait and read instructions on the standard input,  Once all the instructions have been read, checker will execute them on the stack received as an argument .
+
+If after executing those instructions, the numbers are well sorted , then checker must display "OK" else "KO". If checker arguments are invalid it displays Error.
+
+```
+make bonus
+"$>ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_OS $ARG
+```
+
+
+
